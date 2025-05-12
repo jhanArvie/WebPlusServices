@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web4Services</title>
+    <meta name="description" content="We create affordable, professional websites tailored for freelancers, startups, and small businesses. Student-crafted packages from ₱2,500 with mobile-friendly designs and SEO." />
+    <meta property="og:title" content="Web4Services - Student-Crafted Websites" />
+    <meta property="og:description" content="Affordable, professional websites for freelancers & small businesses. Packages from ₱2,500." />
+    <meta property="og:image" content="assets/logo/logo.png" />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4f46e5", secondary: "#f97316" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="w-20 flex flex-row items-center gap-2"
+          ><img class="w-20" src="assets/logo/logo.png" alt="logo" ><img src="assets/logo/logo2.png" alt="logo-text"></a
+        >
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#home" class="text-gray-700 hover:text-primary font-medium"
+            >Home</a
+          >
+          <a href="#about" class="text-gray-700 hover:text-primary font-medium"
+            >About</a
+          >
+          <a
+            href="services/services.html#services"
+            class="text-gray-700 hover:text-primary font-medium"
+            >Services</a
+          >
+          <a
+            href="services/services.html#portfolio"
+            class="text-gray-700 hover:text-primary font-medium"
+            >Portfolio</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-primary font-medium"
+            >Contact</a
+          >
+        </nav>
+        <!-- Mobile Navigation Button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700"
+        >
+          <i class="ri-menu-line ri-lg"></i>
+        </button>
+      </div>
+      <!-- Mobile Navigation Menu -->
+      <div id="mobile-menu" class="md:hidden bg-white hidden">
+        <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+          <a
+            href="#home"
+            class="text-gray-700 hover:text-primary py-2 font-medium"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="text-gray-700 hover:text-primary py-2 font-medium"
+            >About</a
+          >
+          <a
+            href="#home"
+            class="text-gray-700 hover:text-primary py-2 font-medium"
+            >Services</a
+          >
+          <a
+            href="#portfolio"
+            class="text-gray-700 hover:text-primary py-2 font-medium"
+            >Portfolio</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-primary py-2 font-medium"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+
+    
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero-section min-h-screen pt-24 flex items-center"
+    >
+      <div class="container mx-auto px-4 py-16 md:py-24">
+        <div class="bg-white bg-opacity-90 rounded-xl p-8 md:p-12 max-w-2xl">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Launch Your Online Presence for ₱2,500!
+          </h1>
+          <p class="text-lg text-gray-700 mb-8">
+            I build lightning-fast 1-page websites for Filipino entrepreneurs -
+            perfect for services, portfolios & small biz.
+          </p>
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white bg-opacity-90 p-4 rounded-lg">
+              <h3 class="font-bold text-gray-900 mb-2">
+                LAUNCH PACKAGE
+              </h3>
+              <p class="text-gray-700">₱2,500 /one-time</p>
+            </div>
+            <div class="bg-white bg-opacity-90 p-4 rounded-lg">
+              <h3 class="font-bold text-gray-900 mb-2">Care Package</h3>
+              <p class="text-gray-700">₱500/mo (2 free edits)</p>
+            </div>
+            <div class="bg-white bg-opacity-90 p-4 rounded-lg">
+              <h3 class="font-bold text-gray-900 mb-2">GROW PACKAGE</h3>
+              <p class="text-gray-700">₱1,000/mo (domain + 5 edits)</p>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#contact"
+              class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition duration-300 text-center whitespace-nowrap"
+              >Get Your Website Now</a
+            >
+            <a
+              href="services/services.html#pricing"
+              class="border border-primary text-primary px-8 py-3 rounded-button font-medium hover:bg-primary hover:bg-opacity-5 transition duration-300 text-center whitespace-nowrap"
+              >View Pricing</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Business Impact Section -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Why Your Business Needs a Website
+          </h2>
+          <p class="text-gray-700 max-w-2xl mx-auto">
+            In today's digital age, having a website is no longer optional -
+            it's essential for business growth
+          </p>
+          <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-24-hours-line ri-lg"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              24/7 Availability
+            </h3>
+            <p class="text-gray-700">
+              Your website works around the clock, allowing customers to learn
+              about your services and make inquiries anytime, even when you're
+              sleeping.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-customer-service-2-line ri-lg"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Credibility & Trust
+            </h3>
+            <p class="text-gray-700">
+              78% of consumers research businesses online before visiting. A
+              professional website instantly boosts your credibility and
+              customer trust.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-line-chart-line ri-lg"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Increased Revenue
+            </h3>
+            <p class="text-gray-700">
+              Businesses with websites typically see 25-35% more revenue growth
+              compared to those without an online presence.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-global-line ri-lg"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Wider Reach</h3>
+            <p class="text-gray-700">
+              Expand beyond your local area. A website helps you reach customers
+              across the Philippines and even internationally.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-smartphone-line ri-lg"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Mobile Customers
+            </h3>
+            <p class="text-gray-700">
+              With 85% of Filipinos using smartphones, a mobile-friendly website
+              ensures you never miss potential customers.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-advertisement-line ri-lg"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Cost-Effective Marketing
+            </h3>
+            <p class="text-gray-700">
+              A website is your 24/7 marketing tool, offering better ROI than
+              traditional advertising methods like print or radio.
+            </p>
+          </div>
+        </div>
+        <div class="mt-12 bg-primary bg-opacity-5 rounded-xl p-8 md:p-12">
+          <div class="md:flex items-center justify-between">
+            <div class="md:w-2/3 mb-6 md:mb-0">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Ready to Transform Your Business?
+              </h3>
+              <p class="text-gray-700">
+                Get your professional website for just ₱2,500!
+              </p>
+            </div>
+            <a
+              href="services.html"
+              class="inline-block bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition duration-300 whitespace-nowrap"
+              >Check our Services and Prices</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            About Me
+          </h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2">
+            <img
+              src="assets/about/professional-image.jpg"
+              alt="Jhan Arvie"
+              class="rounded-xl shadow-lg w-full max-w-md mx-auto"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Jhan Arvie</h3>
+            <p class="text-gray-700 mb-6">
+              I'm a student entrepreneur and freelance web developer based in
+              Norway, pursuing my online education while helping Filipino
+              businesses establish their digital presence.
+            </p>
+            <div class="space-y-4 mb-8">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary"
+                >
+                  <i class="ri-graduation-cap-line"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Online Student</h4>
+                  <p class="text-gray-600">
+                    Studying web development and digital marketing in a
+                    Norway-based online program
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary"
+                >
+                  <i class="ri-code-box-line"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">
+                    Freelance Developer
+                  </h4>
+                  <p class="text-gray-600">
+                    Creating affordable, professional websites for local
+                    Philippine businesses
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary"
+                >
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Local Focus</h4>
+                  <p class="text-gray-600">
+                    Dedicated to helping businesses in Guiguinto, Bulacan and
+                    across the Philippines
+                  </p>
+                </div>
+              </div>
+            </div>
+            <a
+              href="#contact"
+              class="inline-block bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition duration-300 whitespace-nowrap"
+              >Let's Work Together</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Client Testimonials
+          </h2>
+          <p class="text-gray-700 max-w-2xl mx-auto">
+            Hear what my clients have to say about their experience working with
+            me.
+          </p>
+          <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary"
+              >
+                <i class="ri-user-line ri-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Maria Santos</h4>
+                <p class="text-gray-600 text-sm">Taste of Manila Restaurant</p>
+              </div>
+            </div>
+            <div class="flex text-yellow-400 mb-3">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <p class="text-gray-700">
+              "Jhan created an amazing website for our restaurant that perfectly
+              captures our brand. The online reservation system has increased
+              our bookings by 30%. Highly recommend his services!"
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary"
+              >
+                <i class="ri-user-line ri-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Carlo Reyes</h4>
+                <p class="text-gray-600 text-sm">QuickFix Auto Repair</p>
+              </div>
+            </div>
+            <div class="flex text-yellow-400 mb-3">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-half-fill"></i>
+            </div>
+            <p class="text-gray-700">
+              "Working with Jhan was a pleasure. He understood our needs as a
+              local auto repair shop and delivered a website that has helped us
+              reach new customers. The online scheduling tool saves us so much
+              time!"
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary"
+              >
+                <i class="ri-user-line ri-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Elena Lim</h4>
+                <p class="text-gray-600 text-sm">Glam Studio Salon</p>
+              </div>
+            </div>
+            <div class="flex text-yellow-400 mb-3">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <p class="text-gray-700">
+              "Our salon website looks absolutely stunning! Jhan was
+              professional, responsive, and delivered exactly what we needed.
+              The booking system has simplified our appointment process
+              significantly."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-primary bg-opacity-5">
+      <div class="container mx-auto px-4">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div class="md:flex">
+            <div class="md:w-1/2 p-8 md:p-12">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6">
+                Frequently Asked Questions
+              </h2>
+              <div class="space-y-6">
+                <div class="border-b border-gray-100 pb-6">
+                  <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                    How much does a website typically cost elsewhere?
+                  </h3>
+                  <p class="text-gray-700">
+                    How much does a 1 to 5-page website cost in the Philippines?
+                  </p>
+                  <ul class="mt-3 space-y-2 text-gray-700">
+                    <li class="flex items-center gap-2">
+                      <i class="ri-arrow-right-s-line text-primary"></i>
+                      1-page websites: ₱10,000 – ₱20,000
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="ri-arrow-right-s-line text-primary"></i>
+                      3 to 5-page websites: ₱20,000 – ₱35,000
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="ri-arrow-right-s-line text-primary"></i>
+                      Custom small business websites (with basic features): ₱35,000+
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                    What's included in your ₱2,500 package?
+                  </h3>
+                  <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-center gap-2">
+                      <i class="ri-check-line text-primary"></i>
+                      Professional one-page website
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="ri-check-line text-primary"></i>
+                      Mobile-responsive design
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="ri-check-line text-primary"></i>
+                      Contact form & social media integration
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="ri-check-line text-primary"></i>
+                      Basic SEO setup
+                    </li>
+                  </ul>
+                </div>
+                <a
+                  href="#contact"
+                  class="inline-block bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition duration-300 whitespace-nowrap mt-8"
+                  >Get Started for ₱2,500</a
+                >
+              </div>
+            </div>
+            <div class="md:w-1/2 bg-gray-100 p-8 md:p-12 flex items-center">
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                  Why Choose Web4Services?
+                </h3>
+                <ul class="space-y-4">
+                  <li class="flex items-start gap-3">
+                    <div
+                      class="w-6 h-6 flex items-center justify-center text-primary mt-0.5"
+                    >
+                      <i class="ri-check-line"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Affordable Pricing
+                      </h4>
+                      <p class="text-gray-700">
+                        Budget-friendly options designed specifically for
+                        Philippine businesses
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <div
+                      class="w-6 h-6 flex items-center justify-center text-primary mt-0.5"
+                    >
+                      <i class="ri-check-line"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Fast Turnaround
+                      </h4>
+                      <p class="text-gray-700">
+                        Get your professional website up and running in as
+                        little as 2 weeks
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <div
+                      class="w-6 h-6 flex items-center justify-center text-primary mt-0.5"
+                    >
+                      <i class="ri-check-line"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Local Understanding
+                      </h4>
+                      <p class="text-gray-700">
+                        Websites designed with Filipino customers and businesses
+                        in mind
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <div
+                      class="w-6 h-6 flex items-center justify-center text-primary mt-0.5"
+                    >
+                      <i class="ri-check-line"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Ongoing Support
+                      </h4>
+                      <p class="text-gray-700">
+                        Responsive assistance and maintenance options after
+                        launch
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Get In Touch
+          </h2>
+          <p class="text-gray-700 max-w-2xl mx-auto">
+            Have a project in mind? Let's discuss how I can help your business
+            grow online.
+          </p>
+          <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <form id="contact-form" class="space-y-6" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="hidden">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+              </p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-gray-700 font-medium mb-2"
+                    >Your Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary text-gray-700"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-gray-700 font-medium mb-2"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary text-gray-700"
+                    required
+                  />
+                </div>
+              </div>
+              <div>
+                <label for="phone" class="block text-gray-700 font-medium mb-2"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary text-gray-700"
+                />
+              </div>
+              <div>
+                <label
+                  for="business"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Business Type</label
+                >
+                <div class="relative">
+                  <select id="business" name="business" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+                    <option value="" disabled selected>Select your business type</option>
+                    <optgroup label="Food & Beverage">
+                        <option value="restaurant">Restaurant</option>
+                        <option value="cafe">Café</option>
+                        <option value="foodcart">Food Cart/Stall</option>
+                        <option value="catering">Catering Service</option>
+                    </optgroup>
+                    <optgroup label="Professional Services">
+                        <option value="dental">Dental Clinic</option>
+                        <option value="salon">Beauty Salon/Spa</option>
+                        <option value="fitness">Fitness/Gym</option>
+                        <option value="tutor">Tutorial Services</option>
+                        <option value="legal">Legal Services</option>
+                        <option value="accounting">Accounting Services</option>
+                        <option value="consultant">Business Consultant</option>
+                        <option value="realtor">Real Estate Agent</option>
+                    </optgroup>
+                    <optgroup label="Technical Services">
+                        <option value="auto">Auto Repair Shop</option>
+                        <option value="carwash">Car Wash</option>
+                        <option value="plumbing">Plumbing Services</option>
+                        <option value="electrical">Electrical Services</option>
+                        <option value="aircon">Aircon Services</option>
+                        <option value="cleaning">Cleaning Services</option>
+                    </optgroup>
+                    <optgroup label="Other Services">
+                        <option value="events">Event Planning</option>
+                        <option value="photo">Photography/Videography</option>
+                        <option value="travel">Travel Agency</option>
+                        <option value="other">Other Service-Based Business</option>
+                    </optgroup>
+                </select>
+                  <div
+                    class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-500"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Your Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary text-gray-700"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition duration-300 whitespace-nowrap"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+          <div>
+            <div class="bg-gray-50 rounded-xl p-8 shadow-md mb-8">
+              <h3 class="text-xl font-bold text-gray-900 mb-6">
+                Contact Information
+              </h3>
+              <div class="space-y-4">
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary"
+                  >
+                    <i class="ri-map-pin-line"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Address</h4>
+                    <p class="text-gray-700">Guiguinto, Bulacan, Philippines</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary"
+                  >
+                    <i class="ri-phone-line"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Phone</h4>
+                    <p class="text-gray-700">+63 952 473 9116</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary"
+                  >
+                    <i class="ri-mail-line"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Email</h4>
+                    <p class="text-gray-700">jhanboniel@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-8 shadow-md">
+              <h3 class="text-xl font-bold text-gray-900 mb-6">
+                Business Hours
+              </h3>
+              <div class="space-y-3">
+                <div class="flex justify-between">
+                  <span class="text-gray-700">Monday - Friday</span>
+                  <span class="font-medium text-gray-900"
+                    >9:00 AM - 6:00 PM</span
+                  >
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-700">Saturday</span>
+                  <span class="font-medium text-gray-900"
+                    >10:00 AM - 4:00 PM</span
+                  >
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-700">Sunday</span>
+                  <span class="font-medium text-gray-900">Closed</span>
+                </div>
+              </div>
+              <div class="mt-6">
+                <p class="text-gray-700 mb-4">
+                  Connect with me on social media:
+                </p>
+                <div class="flex gap-4">
+                  <a href="https://www.facebook.com/jhanarvie" class="text-gray-700 hover:text-blue-600 transition-colors"
+                    >Facebook</a
+                  >
+                  <a href="https://www.linkedin.com/in/jhan-arvie-boniel/" class="text-gray-700 hover:text-blue-600 transition-colors"
+                    >LinkedIn</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <a
+              href="#"
+              class="text-2xl font-['Pacifico'] text-white mb-4 inline-block"
+              >Web4Services</a
+            >
+            <p class="text-gray-400 mb-4">
+              Affordable website development services for Philippine businesses.
+              Professional designs that help you stand out online.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://www.facebook.com/Zoriddick"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="ri-facebook-fill ri-lg"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/jhan-arvie-boniel/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="ri-linkedin-fill ri-lg"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#portfolio"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mt-0.5"
+                >
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span class="text-gray-400"
+                  >Guiguinto, Bulacan, Philippines</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mt-0.5"
+                >
+                  <i class="ri-phone-line"></i>
+                </div>
+                <span class="text-gray-400">+63 952 473 9116</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mt-0.5"
+                >
+                  <i class="ri-mail-line"></i>
+                </div>
+                <span class="text-gray-400">jhanboniel@gmail.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 mb-4 md:mb-0">
+            &copy; 2025 Web4Services. All rights reserved.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- WhatsApp Float Button -->
+    <a
+      href="https://wa.me/+639524739116"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 w-16 h-16 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#128C7E] transition-colors z-50 flex items-center justify-center"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="ri-whatsapp-line text-2xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
