@@ -838,16 +838,17 @@
         </div>
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <form  id="contact-form" class="space-y-6" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <form id="contact-form" class="space-y-6" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+              <!-- Netlify requires this exact hidden input -->
               <input type="hidden" name="form-name" value="contact" />
+              
               <p class="hidden">
                 <label>Don't fill this out if you're human: <input name="bot-field" /></label>
               </p>
+            
               <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label for="name" class="block text-gray-700 font-medium mb-2"
-                    >Your Name</label
-                  >
+                  <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
                   <input
                     type="text"
                     id="name"
@@ -858,11 +859,7 @@
                   />
                 </div>
                 <div>
-                  <label
-                    for="email"
-                    class="block text-gray-700 font-medium mb-2"
-                    >Email Address</label
-                  >
+                  <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
                   <input
                     type="email"
                     id="email"
@@ -873,10 +870,9 @@
                   />
                 </div>
               </div>
+            
               <div>
-                <label for="phone" class="block text-gray-700 font-medium mb-2"
-                  >Phone Number</label
-                >
+                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
                 <input
                   type="tel"
                   id="phone"
@@ -885,33 +881,26 @@
                   placeholder="09123456789"
                 />
               </div>
+            
               <div>
-                <label
-                  for="business"
-                  class="block text-gray-700 font-medium mb-2"
-                  >Business Type</label
-                >
+                <label for="business-label" class="block text-gray-700 font-medium mb-2">Business Type</label>
                 <div class="relative">
                   <input
-                      type="text"
-                      id="business-search"
-                      name="business"
-                      class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:border-primary focus:ring-1 focus:ring-primary pr-8"
-                      placeholder="Search or select your business type"
-                      autocomplete="off"
+                    type="text"
+                    id="business-search"
+                    name="business-label"  
+                    class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:border-primary focus:ring-1 focus:ring-primary pr-8"
+                    placeholder="Search or select your business type"
+                    autocomplete="off"
                   />
-                  <div
-                      id="business-suggestions"
-                      class="hidden absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded shadow-lg max-h-60 overflow-auto"
-                  ></div>
+                  <!-- Hidden input for the actual value -->
+                  <input type="hidden" id="business-value" name="business" value="" />
+                  <div id="business-suggestions" class="hidden absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded shadow-lg max-h-60 overflow-auto"></div>
+                </div>
               </div>
-              </div>
+            
               <div>
-                <label
-                  for="message"
-                  class="block text-gray-700 font-medium mb-2"
-                  >Your Message</label
-                >
+                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -921,6 +910,8 @@
                   placeholder="Specify your business and website needs."
                 ></textarea>
               </div>
+            
+            
               <button
                 type="submit"
                 class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition duration-300 whitespace-nowrap"

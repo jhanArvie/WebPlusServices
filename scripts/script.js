@@ -85,19 +85,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // Form Submission
     const contactForm = document.getElementById("contact-form");
     contactForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        // Simple form validation
+        // Validate fields (optional)
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
         const message = document.getElementById("message").value;
+
         if (!name || !email || !message) {
+            e.preventDefault(); // Only prevent if validation fails
             alert("Please fill in all required fields.");
             return;
         }
-        // Here you would normally send the form data to a server
-        // For demo purposes, we'll just show a success message
-        alert("Thank you for your message! I will get back to you soon.");
-        contactForm.reset();
+        // Let Netlify handle submission if validation passes
     });
 });
 
@@ -161,7 +159,7 @@ function displaySuggestions(suggestions) {
 
 function selectSuggestion(value, label) {
     searchInput.value = label;
-    // Optional: Set a hidden input with the actual value if needed
+    document.getElementById("business-value").value = value; // Set hidden input
     suggestionsContainer.classList.add('hidden');
 }
 
