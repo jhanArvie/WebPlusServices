@@ -9,7 +9,7 @@
     <meta property="og:description" content="Affordable, professional websites for freelancers & small businesses. Packages from ₱2,500." />
     <meta property="og:image" content="assets/logo/logo.png" />
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <script>
       tailwind.config = {
         theme: {
@@ -81,6 +81,7 @@
         <button
           id="mobile-menu-button"
           class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700"
+          aria-label="Toggle Mobile Menu"
         >
           <i class="ri-menu-line ri-lg"></i>
         </button>
@@ -99,12 +100,12 @@
             >About</a
           >
           <a
-            href="../index.html#services"
+            href="#services"
             class="text-gray-700 hover:text-primary py-2 font-medium"
             >Services</a
           >
           <a
-            href="../index.html#portfolio"
+            href="#portfolio"
             class="text-gray-700 hover:text-primary py-2 font-medium"
             >Portfolio</a
           >
@@ -269,7 +270,7 @@
           class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
         >
           <img
-            src="https://readdy.ai/api/search-image?query=modern%2520Filipino%2520restaurant%2520website%2520design%2520on%2520computer%2520screen%252C%2520showing%2520food%2520menu%2520and%2520elegant%2520layout%252C%2520professional%2520web%2520design%252C%2520clean%2520background%252C%2520high%2520quality%252C%2520photorealistic&width=600&height=400&seq=port1&orientation=landscape"
+            src="../assets/portfolio/0987aff81dca09483ca829802f88d439.jpg"
             alt="Restaurant Website"
             class="w-full h-56 object-cover"
           />
@@ -310,7 +311,7 @@
           class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
         >
           <img
-            src="https://readdy.ai/api/search-image?query=modern%2520nail%2520salon%2520website%2520design%2520on%2520computer%2520screen%252C%2520showing%2520nail%2520art%2520gallery%2520and%2520booking%2520system%252C%2520professional%2520web%2520design%252C%2520clean%2520background%252C%2520high%2520quality%252C%2520photorealistic&width=600&height=400&seq=port2&orientation=landscape"
+            src="../assets/portfolio/e87a323a20030ed63e6db8760f127d92 (2).jpg"
             alt="Nails Website"
             class="w-full h-56 object-cover"
           />
@@ -349,7 +350,7 @@
           class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
         >
           <img
-            src="https://readdy.ai/api/search-image?query=professional%2520auto%2520repair%2520shop%2520website%2520design%2520on%2520computer%2520screen%252C%2520showing%2520services%2520and%2520booking%2520form%252C%2520professional%2520web%2520design%252C%2520clean%2520background%252C%2520high%2520quality%252C%2520photorealistic&width=600&height=400&seq=port3&orientation=landscape"
+            src="../assets/portfolio/0987aff81dca09483ca829802f88d439.jpg"
             alt="Auto Repair Website"
             class="w-full h-56 object-cover"
           />
@@ -403,7 +404,7 @@
             class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all"
           >
             <div class="p-6 border-b border-gray-100">
-              <h3 class="text-xl font-bold text-gray-900 mb-2">
+              <h3 class="text-xl font-bold text-gray-900 mb-2" >
                 LAUNCH PACKAGE
               </h3>
               <div class="text-3xl font-bold text-gray-900 mb-2">
@@ -837,7 +838,7 @@
         </div>
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <form id="contact-form" class="space-y-6" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <form  id="contact-form" class="space-y-6" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
               <input type="hidden" name="form-name" value="contact" />
               <p class="hidden">
                 <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -853,6 +854,7 @@
                     name="name"
                     class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary text-gray-700"
                     required
+                    placeholder="Juan Carlos"
                   />
                 </div>
                 <div>
@@ -867,6 +869,7 @@
                     name="email"
                     class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary text-gray-700"
                     required
+                    placeholder="juan.carlos@example.com"
                   />
                 </div>
               </div>
@@ -879,6 +882,7 @@
                   id="phone"
                   name="phone"
                   class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary text-gray-700"
+                  placeholder="09123456789"
                 />
               </div>
               <div>
@@ -888,45 +892,19 @@
                   >Business Type</label
                 >
                 <div class="relative">
-                  <select id="business" name="business" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:border-primary focus:ring-1 focus:ring-primary pr-8">
-                    <option value="" disabled selected>Select your business type</option>
-                    <optgroup label="Food & Beverage">
-                        <option value="restaurant">Restaurant</option>
-                        <option value="cafe">Café</option>
-                        <option value="foodcart">Food Cart/Stall</option>
-                        <option value="catering">Catering Service</option>
-                    </optgroup>
-                    <optgroup label="Professional Services">
-                        <option value="dental">Dental Clinic</option>
-                        <option value="salon">Beauty Salon/Spa</option>
-                        <option value="fitness">Fitness/Gym</option>
-                        <option value="tutor">Tutorial Services</option>
-                        <option value="legal">Legal Services</option>
-                        <option value="accounting">Accounting Services</option>
-                        <option value="consultant">Business Consultant</option>
-                        <option value="realtor">Real Estate Agent</option>
-                    </optgroup>
-                    <optgroup label="Technical Services">
-                        <option value="auto">Auto Repair Shop</option>
-                        <option value="carwash">Car Wash</option>
-                        <option value="plumbing">Plumbing Services</option>
-                        <option value="electrical">Electrical Services</option>
-                        <option value="aircon">Aircon Services</option>
-                        <option value="cleaning">Cleaning Services</option>
-                    </optgroup>
-                    <optgroup label="Other Services">
-                        <option value="events">Event Planning</option>
-                        <option value="photo">Photography/Videography</option>
-                        <option value="travel">Travel Agency</option>
-                        <option value="other">Other Service-Based Business</option>
-                    </optgroup>
-                </select>
+                  <input
+                      type="text"
+                      id="business-search"
+                      name="business"
+                      class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:border-primary focus:ring-1 focus:ring-primary pr-8"
+                      placeholder="Search or select your business type"
+                      autocomplete="off"
+                  />
                   <div
-                    class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-500"
-                  >
-                    <i class="ri-arrow-down-s-line"></i>
-                  </div>
-                </div>
+                      id="business-suggestions"
+                      class="hidden absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded shadow-lg max-h-60 overflow-auto"
+                  ></div>
+              </div>
               </div>
               <div>
                 <label
@@ -940,6 +918,7 @@
                   rows="5"
                   class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary text-gray-700"
                   required
+                  placeholder="Specify your business and website needs."
                 ></textarea>
               </div>
               <button
@@ -1166,6 +1145,6 @@
     </a>
 
     <!-- Scripts -->
-    <script src="scripts/script.js"></script>
+    <script src="../scripts/script.js"></script>
   </body>
 </html>

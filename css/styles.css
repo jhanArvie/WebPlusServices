@@ -7,7 +7,7 @@ body {
 }
 
 .hero-section {
-    background-image: url('https://readdy.ai/api/search-image?query=professional%2520web%2520developer%2520workspace%2520with%2520modern%2520computer%2520setup%252C%2520clean%2520desk%2520with%2520Filipino%2520elements%252C%2520soft%2520natural%2520lighting%2520from%2520left%2520side%252C%2520gradient%2520blue%2520to%2520white%2520background%252C%2520minimalist%2520style%252C%2520high%2520quality%252C%2520photorealistic&width=1920&height=1080&seq=hero1&orientation=landscape');
+    background-image: url('../assets/hero/1d151864a8b9846476f46bb32e1adfd4.jpg');
     background-size: cover;
     background-position: center;
 }
