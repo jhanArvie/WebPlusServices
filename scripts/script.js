@@ -98,8 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // For demo purposes, we'll just show a success message
         alert("Thank you for your message! I will get back to you soon.");
         contactForm.reset();
-        checkbox.classList.remove("checked");
-        isChecked = false;
     });
 });
 
