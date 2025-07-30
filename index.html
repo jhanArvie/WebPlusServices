@@ -47,15 +47,34 @@
     />
 
   </head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBZ2V3HBG6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) with enhanced privacy settings -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBZ2V3HBG6" data-cookieconsent="statistics"></script>
+  <script data-cookieconsent="statistics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    
+    // Configure with privacy settings
+    gtag('js', new Date());
+    gtag('config', 'G-ZBZ2V3HBG6', {
+      'anonymize_ip': true,
+      'allow_google_signals': false,
+      'allow_ad_personalization_signals': false,
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500 // Wait 500ms before sending the pageview
+    });
 
-  gtag('config', 'G-ZBZ2V3HBG6');
-</script>
+    // Only set cookies if user has given consent
+    document.addEventListener('cookieconsent', function(e) {
+      if (e.detail.consent) {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'analytics_storage': 'granted',
+          'functionality_storage': 'granted'
+        });
+      }
+    }, false);
+  </script>
   <body class="bg-gray-50">
     <!-- Header -->
     <header class="bg-white shadow-sm fixed w-full top-0 z-50">
@@ -961,5 +980,6 @@
 
     <!-- Scripts -->
     <script src="scripts/script.js"></script>
+    <script src="scripts/cookie-consent.js"></script>
   </body>
 </html>

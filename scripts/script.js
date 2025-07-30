@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     // Mobile Menu Toggle
     const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -82,21 +81,71 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     setupOptionSelection(budgetOptions);
     setupOptionSelection(timelineOptions);
+
+    // Form validation function
+    function validateForm(form) {
+        const name = form.querySelector('#name');
+        const email = form.querySelector('#email');
+        const phone = form.querySelector('#phone');
+        const message = form.querySelector('#message');
+        
+        // Basic validation
+        if (name.value.trim().length < 2) {
+            alert('Please enter your full name');
+            name.focus();
+            return false;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.value.trim())) {
+            alert('Please enter a valid email address');
+            email.focus();
+            return false;
+        }
+        
+        // Phone validation (if provided)
+        if (phone && phone.value) {
+            const phoneRegex = /^[0-9\s+\-()]+$/;
+            if (!phoneRegex.test(phone.value)) {
+                alert('Please enter a valid phone number');
+                phone.focus();
+                return false;
+            }
+        }
+        
+        // Message validation
+        if (message.value.trim().length < 10) {
+            alert('Please provide a more detailed message (at least 10 characters)');
+            message.focus();
+            return false;
+        }
+        
+        return true;
+    }
+
     // Form Submission
     const contactForm = document.getElementById("contact-form");
-    contactForm.addEventListener("submit", function (e) {
-        // Validate fields (optional)
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
-
-        if (!name || !email || !message) {
-            e.preventDefault(); // Only prevent if validation fails
-            alert("Please fill in all required fields.");
-            return;
-        }
-        // Let Netlify handle submission if validation passes
-    });
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            if (!validateForm(this)) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // If using Netlify forms, this will submit normally
+            // If you want to add additional processing, you can do it here
+            
+            // Optional: Add loading state
+            const submitButton = this.querySelector('button[type="submit"]');
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.innerHTML = 'Sending...';
+            }
+            
+            return true;
+        });
+    }
 });
 
 

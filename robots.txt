@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you
+
+# Security
+Disallow: /admin
+Disallow: /wp-admin
+Disallow: /wp-login.php
+Disallow: /wp-content/plugins/
+
+# Sitemap (uncomment and update with your domain after creating a sitemap.xml)
+# Sitemap: https://yourdomain.com/sitemap.xml

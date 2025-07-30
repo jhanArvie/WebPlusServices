@@ -1,0 +1,44 @@
+# Global settings
+[build]
+  publish = "/"
+  command = ""
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Basic security headers
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # HSTS - Enable only after you've confirmed HTTPS is working
+    # Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    
+    # CSP - Adjust sources as needed for your site
+    Content-Security-Policy = """
+      default-src 'self' https:;
+      script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com https://www.google-analytics.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      img-src 'self' data: https:;
+      font-src 'self' https://fonts.gstatic.com;
+      connect-src 'self' https://www.google-analytics.com;
+      frame-ancestors 'none';
+      form-action 'self';
+      base-uri 'self';
+    """
+
+# Redirects - Force HTTPS
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+  
+# Uncomment this section after testing the basic setup
+# [[redirects]]
+#   from = "http://*"
+#   to = "https://yourdomain.com:443/"
+#   status = 301
+#   force = true
