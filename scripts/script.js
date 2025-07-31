@@ -2,12 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mobile Menu Toggle
     const mobileMenuButton = document.getElementById("mobile-menu-button");
     const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = mobileMenuButton.querySelector("i");
+    
     mobileMenuButton.addEventListener("click", function () {
         mobileMenu.classList.toggle("hidden");
         if (mobileMenu.classList.contains("hidden")) {
-            mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+            menuIcon.className = "ri-menu-line text-3xl";
         } else {
-            mobileMenuButton.innerHTML = '<i class="ri-close-line ri-lg"></i>';
+            menuIcon.className = "ri-close-line text-3xl";
         }
     });
 
@@ -19,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Close mobile menu if open
             if (!mobileMenu.classList.contains("hidden")) {
                 mobileMenu.classList.add("hidden");
-                mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                menuIcon.className = "ri-menu-line text-3xl";
             }
             const targetId = this.getAttribute("href");
             if (targetId === "#") return;
