@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div class="text-sm">
                         <p class="font-medium">We use cookies to enhance your experience.</p>
-                        <p class="text-gray-300">By continuing to browse, you agree to our use of cookies. <a href="../privacy-policy.html" class="text-blue-300 hover:text-white underline">Learn more</a></p>
+                        <p class="text-gray-300">By continuing to browse, you agree to our use of cookies. <a href="../services/privacy-policy.html" class="text-blue-300 hover:text-white underline">Learn more</a></p>
                     </div>
                     <div class="flex gap-3">
                         <button id="cookie-consent-accept" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-button text-sm font-medium transition-colors">
