@@ -154,8 +154,20 @@ const businessOptions = [
     { value: "restaurant", label: "Restaurant", category: "Food & Beverage" },
     { value: "cafe", label: "Café", category: "Food & Beverage" },
     { value: "foodcart", label: "Food Cart/Stall", category: "Food & Beverage" },
-    { value: "dental", label: "Dental Clinic", category: "Professional Services" },
-    { value: "salon", label: "Beauty Salon/Spa", category: "Professional Services" },
+    { value: "salon", label: "Beauty Salon/Spa", category: "Body and Beauty" },
+    { value: "lawyer", label: "Lawyer", category: "Professional Services" },
+    { value: "plumber", label: "Plumber", category: "Professional Services" },
+    { value: "electrician", label: "Electrician", category: "Professional Services" },
+    { value: "doctor", label: "Doctor", category: "Professional Services" },
+    { value: "dentist", label: "Dentist", category: "Professional Services" },
+    { value: "pharmacist", label: "Pharmacist", category: "Professional Services" },
+    { value: "massage", label: "Massage", category: "Professional Services" },
+    { value: "fitness", label: "Fitness", category: "Professional Services" },
+    { value: "catering", label: "Catering", category: "Food & Beverage" },
+    { value: "automotive", label: "Automotive", category: "Technical Services" },
+    { value: "driving", label: "Driving School", category: "Technical Services" },
+    { value: "photography", label: "Photography", category: "Professional Services" },
+    { value: "other", label: "Other", category: "Other" },
     // Add all other options from your original select...
 ];
 
@@ -180,7 +192,7 @@ searchInput.addEventListener('input', function (e) {
 
 function displaySuggestions(suggestions) {
     if (suggestions.length === 0) {
-        suggestionsContainer.innerHTML = '<div class="p-3 text-gray-500">No matching business types found</div>';
+        suggestionsContainer.innerHTML = '<div class="p-3 text-gray-500">Other (Please Specify)</div>';
         suggestionsContainer.classList.remove('hidden');
         return;
     }
