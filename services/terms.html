@@ -3,38 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service - Web+ Services AS</title>
-  <meta name="description" content="Terms of Service for Web+ Services AS, outlining the terms and conditions for using our IT support and web development services in Norway.">
+  <title>Terms of Service - WebPlus Services AS</title>
+  <meta name="description" content="Terms of Service for WebPlus Services AS, outlining the terms and conditions for using our IT support and web development services in Norway.">
   <script src="https://cdn.tailwindcss.com/3.4.16"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .rounded-button { border-radius: 8px; }
-    .prose h2 { 
-      @apply text-2xl font-bold text-gray-900 mt-8 mb-4;
-    }
-    .prose h3 {
-      @apply text-xl font-semibold text-gray-900 mt-6 mb-3;
-    }
-    .prose p, .prose ul {
-      @apply text-gray-700 mb-4;
-    }
-    .prose ul {
-      @apply list-disc pl-6 space-y-2;
-    }
-  </style>
 </head>
-<body class="bg-gray-50">
+<body class="font-['Inter'] bg-gray-50 text-gray-700 leading-relaxed">
   <!-- Header -->
   <header class="bg-white shadow-sm fixed w-full top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="index.html" class="flex items-center">
-        <img src="assets/logo/logo.png" alt="Web+ Services Logo" class="h-10">
-        <span class="ml-2 text-xl font-bold text-gray-900">Web+ Services</span>
+      <a href="../index.html" class="flex items-center group">
+        <img src="../assets/logo/logo.png" alt="WebPlus Services Logo" class="h-10 transition-transform duration-200 group-hover:scale-105">
+        <span class="ml-3 text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">WebPlus Services</span>
       </a>
-      <a href="index.html" class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-opacity-90 transition-colors">
-        Back to Home
+      <a href="../index.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors flex items-center">
+        <i class="ri-arrow-left-line mr-2"></i> Back to Home
       </a>
     </div>
   </header>
@@ -42,82 +26,180 @@
   <!-- Main Content -->
   <main class="pt-32 pb-16 md:pt-40 md:pb-24">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-sm p-6 md:p-8">
-        <h1 class="text-3xl font-bold text-gray-900 mb-2">Terms of Service</h1>
-        <p class="text-gray-600 mb-8">Last updated: July 30, 2025</p>
+      <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-sm overflow-hidden">
+        <!-- Header Section -->
+        <div class="bg-gradient-to-r from-blue-600 to-blue-800 p-6 md:p-8 text-white">
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">Terms of Service</h1>
+          <p class="text-blue-100 opacity-90">Last updated: July 30, 2025</p>
+        </div>
+        
+        <!-- Content Section -->
+        <div class="p-6 md:p-8">
+          <!-- Last Updated -->
+          <div class="text-gray-500 text-sm mb-10 p-4 bg-gray-50 border-l-4 border-blue-500 rounded-r">
+            <div class="flex items-center">
+              <i class="ri-time-line mr-2"></i> 
+              <span>Last updated: <strong>July 30, 2025</strong></span>
+            </div>
+          </div>
 
-        <div class="prose max-w-none">
-          <p>Welcome to Web+ Services AS. These Terms of Service ("Terms") govern your use of our website and services. By accessing or using our services, you agree to be bound by these Terms.</p>
-          
-          <h2>1. Services Overview</h2>
-          <p>Web+ Services AS provides IT support and web development services to businesses in Norway, including but not limited to:</p>
-          <ul>
-            <li>24/7 IT support and monitoring</li>
-            <li>Web development and maintenance</li>
-            <li>Cybersecurity services</li>
-            <li>Cloud solutions</li>
-          </ul>
+          <!-- Terms Content -->
+          <div class="prose max-w-none text-gray-700">
+            <p class="mb-6">Welcome to WebPlus Services AS. These Terms of Service ("Terms") govern your use of our website and services. By accessing or using our services, you agree to be bound by these Terms.</p>
+            
+            <!-- Section 1 -->
+            <h2 class="text-2xl font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-4">1. Services Overview</h2>
+            <p class="mb-4">WebPlus Services AS provides IT support and web development services to businesses in Norway, including but not limited to:</p>
+            <ul class="list-none space-y-2 mb-6 pl-0">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>24/7 IT support and monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Web development and maintenance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Cybersecurity services</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Cloud solutions</span>
+              </li>
+            </ul>
 
-          <h2>2. Service Packages</h2>
-          <p>We offer the following service packages:</p>
-          <ul>
-            <li><strong>TechStart:</strong> Basic IT support for small businesses</li>
-            <li><strong>TechCare:</strong> Proactive IT management with 24/7 monitoring</li>
-            <li><strong>TechScale:</strong> Comprehensive IT solutions for larger organizations</li>
-          </ul>
-          <p>Detailed descriptions of each package are available on our Services page.</p>
+            <!-- Section 2 -->
+            <h2 class="text-2xl font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-4 mt-10">2. Service Packages</h2>
+            <p class="mb-4">We offer the following service packages:</p>
+            <ul class="list-none space-y-2 mb-6 pl-0">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <div>
+                  <span class="font-semibold">TechStart:</span> Basic IT support for small businesses
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <div>
+                  <span class="font-semibold">TechCare:</span> Proactive IT management with 24/7 monitoring
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <div>
+                  <span class="font-semibold">TechScale:</span> Comprehensive IT solutions for larger organizations
+                </div>
+              </li>
+            </ul>
+            <p class="mb-6">Detailed descriptions of each package are available on our Services page.</p>
 
-          <h2>3. Payment Terms</h2>
-          <ul>
-            <li>All prices are in Norwegian Kroner (NOK) and exclude VAT unless otherwise stated</li>
-            <li>Invoices are issued monthly in advance</li>
-            <li>Payment is due within 14 days of invoice date</li>
-            <li>Late payments may incur interest in accordance with the Norwegian Interest Act</li>
-          </ul>
+            <!-- Section 3 -->
+            <h2 class="text-2xl font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-4 mt-10">3. Payment Terms</h2>
+            <ul class="list-none space-y-2 mb-6 pl-0">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>All prices are in Norwegian Kroner (NOK) and exclude VAT unless otherwise stated</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Invoices are issued monthly in advance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Payment is due within 14 days of invoice date</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Late payments may incur interest in accordance with the Norwegian Interest Act</span>
+              </li>
+            </ul>
 
-          <h2>4. Service Level Agreement (SLA)</h2>
-          <p>Our SLA outlines the level of service you can expect:</p>
-          <ul>
-            <li><strong>Response Times:</strong> Varies by package (1-24 business hours)</li>
-            <li><strong>Uptime Guarantee:</strong> 99.9% for managed services</li>
-            <li><strong>Support Hours:</strong> 24/7 for emergency issues (TechCare and TechScale)</li>
-          </ul>
+            <!-- Section 4 -->
+            <h2 class="text-2xl font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-4 mt-10">4. Service Level Agreement (SLA)</h2>
+            <p class="mb-4">Our SLA outlines the level of service you can expect:</p>
+            <ul class="list-none space-y-2 mb-6 pl-0">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <div>
+                  <span class="font-semibold">Response Times:</span> Varies by package (1-24 business hours)
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <div>
+                  <span class="font-semibold">Uptime Guarantee:</span> 99.9% for managed services
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <div>
+                  <span class="font-semibold">Support Hours:</span> 24/7 for emergency issues (TechCare and TechScale)
+                </div>
+              </li>
+            </ul>
 
-          <h2>5. Data Protection</h2>
-          <p>We comply with the Norwegian Personal Data Act and GDPR. Our Privacy Policy explains how we collect, use, and protect your data.</p>
+            <!-- Section 5 -->
+            <h2 class="text-2xl font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-4 mt-10">5. Data Protection</h2>
+            <p class="mb-6">We comply with the Norwegian Personal Data Act and GDPR. Our <a href="privacy-policy.html" class="text-blue-600 hover:underline">Privacy Policy</a> explains how we collect, use, and protect your data.</p>
 
-          <h2>6. Intellectual Property</h2>
-          <ul>
-            <li>We retain all rights to our proprietary tools and systems</li>
-            <li>Clients retain ownership of their data and content</li>
-            <li>Custom developments are licensed to the client upon full payment</li>
-          </ul>
+            <!-- Section 6 -->
+            <h2 class="text-2xl font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-4 mt-10">6. Intellectual Property</h2>
+            <ul class="list-none space-y-2 mb-6 pl-0">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>We retain all rights to our proprietary tools and systems</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Clients retain ownership of their data and content</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Custom developments are licensed to the client upon full payment</span>
+              </li>
+            </ul>
 
-          <h2>7. Limitation of Liability</h2>
-          <p>To the extent permitted by Norwegian law, Web+ Services AS shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services.</p>
+            <!-- Section 7 -->
+            <h2 class="text-2xl font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-4 mt-10">7. Limitation of Liability</h2>
+            <p class="mb-6">To the extent permitted by Norwegian law, WebPlus Services AS shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services.</p>
 
-          <h2>8. Termination</h2>
-          <ul>
-            <li>Either party may terminate the agreement with 30 days' written notice</li>
-            <li>We reserve the right to suspend services for non-payment</li>
-            <li>Outstanding fees remain payable upon termination</li>
-          </ul>
+            <!-- Section 8 -->
+            <h2 class="text-2xl font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-4 mt-10">8. Termination</h2>
+            <ul class="list-none space-y-2 mb-6 pl-0">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Either party may terminate the agreement with 30 days' written notice</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>We reserve the right to suspend services for non-payment</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Outstanding fees remain payable upon termination</span>
+              </li>
+            </ul>
 
-          <h2>9. Governing Law</h2>
-          <p>These Terms shall be governed by and construed in accordance with the laws of Norway. Any disputes shall be subject to the exclusive jurisdiction of the courts of Oslo.</p>
+            <!-- Section 9 -->
+            <h2 class="text-2xl font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-4 mt-10">9. Governing Law</h2>
+            <p class="mb-6">These Terms shall be governed by and construed in accordance with the laws of Norway. Any disputes shall be subject to the exclusive jurisdiction of the courts of Oslo.</p>
 
-          <h2>10. Changes to Terms</h2>
-          <p>We may update these Terms from time to time. Continued use of our services constitutes acceptance of the updated Terms.</p>
+            <!-- Section 10 -->
+            <h2 class="text-2xl font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-4 mt-10">10. Changes to Terms</h2>
+            <p class="mb-6">We may update these Terms from time to time. Continued use of our services constitutes acceptance of the updated Terms.</p>
 
-          <h2>11. Contact Information</h2>
-          <p>
-            Web+ Services AS<br>
-            IT-avdelingen<br>
-            0150 Oslo, Norway<br>
-            Org.nr: 123 456 789 MVA<br>
-            Email: <a href="mailto:post@webplusservices.no" class="text-primary hover:underline">post@webplusservices.no</a><br>
-            Phone: +47 12 34 56 78
-          </p>
+            <!-- Section 11 -->
+            <h2 class="text-2xl font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-4 mt-10">11. Contact Information</h2>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <p class="mb-2"><span class="font-medium">WebPlus Services AS</span></p>
+              <p class="mb-2">IT-avdelingen</p>
+              <p class="mb-2">0150 Oslo, Norway</p>
+              <p class="mb-2">Org.nr: 123 456 789 MVA</p>
+              <p class="mb-2"><span class="font-medium">Email:</span> <a href="mailto:post@webplusservices.no" class="text-blue-600 hover:underline">post@webplusservices.no</a></p>
+              <p><span class="font-medium">Phone:</span> +47 12 34 56 78</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -127,11 +209,11 @@
   <footer class="bg-gray-900 text-white py-8">
     <div class="container mx-auto px-4">
       <div class="text-center">
-        <p>&copy; 2025 Web+ Services AS. All rights reserved.</p>
-        <div class="mt-4 flex justify-center space-x-6">
-          <a href="terms.html" class="text-gray-400 hover:text-white">Terms of Service</a>
-          <a href="privacy-policy.html" class="text-gray-400 hover:text-white">Privacy Policy</a>
-          <a href="#" id="open-cookie-settings-bottom" class="text-gray-400 hover:text-white">Cookie Settings</a>
+        <p>&copy; 2025 WebPlus Services AS. All rights reserved.</p>
+        <div class="mt-4 flex flex-wrap justify-center gap-4">
+          <a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+          <a href="privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" id="open-cookie-settings" class="text-gray-400 hover:text-white transition-colors">Cookie Settings</a>
         </div>
       </div>
     </div>
