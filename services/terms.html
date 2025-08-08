@@ -227,13 +227,30 @@
     </div>
   </footer>
 
+  <!-- Include Cookie Consent Script -->
+  <script src="../scripts/cookie-consent.js"></script>
+  
   <script>
-    // Simple script to handle cookie settings
-    document.querySelectorAll('[id^="open-cookie-settings"]').forEach(button => {
-      button.addEventListener('click', function(e) {
-        e.preventDefault();
-        alert('Cookie settings would open here. This is a placeholder for the cookie consent management interface.');
-      });
+    // Handle cookie settings link
+    document.addEventListener('DOMContentLoaded', function() {
+      const cookieSettingsLink = document.getElementById('open-cookie-settings');
+      if (cookieSettingsLink) {
+        cookieSettingsLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (window.cookieConsent && typeof window.cookieConsent.showSettings === 'function') {
+            window.cookieConsent.showSettings();
+          } else {
+            console.warn('Cookie consent interface not available. Make sure cookie-consent.js is loaded.');
+            alert('Please accept cookies on our homepage to manage your preferences.');
+          }
+        });
+      }
+      
+      // Check if cookie consent is initialized, if not, initialize it
+      if (window.cookieConsent && typeof window.cookieConsent.getConsent === 'function') {
+        // Just ensure it's initialized
+        window.cookieConsent.getConsent();
+      }
     });
   </script>
 </body>
