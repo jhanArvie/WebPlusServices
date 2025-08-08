@@ -96,90 +96,124 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Show cookie settings panel
     function showCookieSettings() {
+        // Remove any existing settings panel first
+        const existingPanel = document.getElementById('cookie-settings-panel');
+        if (existingPanel) {
+            existingPanel.remove();
+        }
+
         const preferences = JSON.parse(localStorage.getItem('cookie-preferences') || '{"necessary":true,"analytics":false,"marketing":false,"preferences":false}');
         
         const settingsPanel = document.createElement('div');
         settingsPanel.id = 'cookie-settings-panel';
-        settingsPanel.className = 'fixed bottom-0 left-0 right-0 bg-white shadow-lg z-50 p-6 max-h-[80vh] overflow-y-auto';
+        settingsPanel.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
         settingsPanel.innerHTML = `
-            <div class="container mx-auto max-w-4xl">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-xl font-bold text-gray-900">Cookie Settings</h3>
-                    <button id="close-cookie-settings" class="text-gray-500 hover:text-gray-700">
-                        <i class="ri-close-line text-2xl"></i>
-                    </button>
-                </div>
-                
-                <div class="space-y-6">
-                    <!-- Necessary Cookies -->
-                    <div class="flex items-start">
-                        <div class="flex-1">
-                            <h4 class="font-medium text-gray-900">Necessary Cookies</h4>
-                            <p class="text-sm text-gray-600">These cookies are essential for the website to function and cannot be switched off.</p>
-                        </div>
-                        <div class="ml-4 flex items-center">
-                            <input type="checkbox" id="cookie-necessary" class="h-4 w-4 text-blue-600 rounded border-gray-300" checked disabled>
-                        </div>
-                    </div>
-                    
-                    <!-- Analytics Cookies -->
-                    <div class="flex items-start">
-                        <div class="flex-1">
-                            <h4 class="font-medium text-gray-900">Analytics Cookies</h4>
-                            <p class="text-sm text-gray-600">These cookies help us understand how visitors interact with our website.</p>
-                        </div>
-                        <div class="ml-4 flex items-center">
-                            <input type="checkbox" id="cookie-analytics" class="h-4 w-4 text-blue-600 rounded border-gray-300" ${preferences.analytics ? 'checked' : ''}>
-                        </div>
-                    </div>
-                    
-                    <!-- Marketing Cookies -->
-                    <div class="flex items-start">
-                        <div class="flex-1">
-                            <h4 class="font-medium text-gray-900">Marketing Cookies</h4>
-                            <p class="text-sm text-gray-600">These cookies are used to track visitors across websites for marketing purposes.</p>
-                        </div>
-                        <div class="ml-4 flex items-center">
-                            <input type="checkbox" id="cookie-marketing" class="h-4 w-4 text-blue-600 rounded border-gray-300" ${preferences.marketing ? 'checked' : ''}>
-                        </div>
-                    </div>
-                    
-                    <!-- Preferences Cookies -->
-                    <div class="flex items-start">
-                        <div class="flex-1">
-                            <h4 class="font-medium text-gray-900">Preference Cookies</h4>
-                            <p class="text-sm text-gray-600">These cookies allow the website to remember choices you make.</p>
-                        </div>
-                        <div class="ml-4 flex items-center">
-                            <input type="checkbox" id="cookie-preferences" class="h-4 w-4 text-blue-600 rounded border-gray-300" ${preferences.preferences ? 'checked' : ''}>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-col sm:flex-row gap-3 pt-4">
-                        <button id="save-cookie-settings" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
-                            Save Settings
+            <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-xl font-bold text-gray-900">Cookie Settings</h3>
+                        <button id="close-cookie-settings" class="text-gray-500 hover:text-gray-700">
+                            <i class="ri-close-line text-2xl"></i>
                         </button>
-                        <button id="accept-all-cookies" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-lg font-medium transition-colors">
-                            Accept All
-                        </button>
-                        <button id="reject-all-cookies" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-lg font-medium transition-colors">
-                            Reject All
-                        </button>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <!-- Necessary Cookies -->
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Necessary Cookies</h4>
+                                    <p class="text-sm text-gray-600">Essential for the website to function properly.</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" id="cookie-necessary" class="sr-only peer" checked disabled>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Analytics Cookies -->
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Analytics Cookies</h4>
+                                    <p class="text-sm text-gray-600">Help us understand how visitors interact with our website.</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" id="cookie-analytics" class="sr-only peer" ${preferences.analytics ? 'checked' : ''}>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Marketing Cookies -->
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Marketing Cookies</h4>
+                                    <p class="text-sm text-gray-600">Used to track visitors across websites for marketing purposes.</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" id="cookie-marketing" class="sr-only peer" ${preferences.marketing ? 'checked' : ''}>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Preferences Cookies -->
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Preference Cookies</h4>
+                                    <p class="text-sm text-gray-600">Remember your preferences for future visits.</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" id="cookie-preferences" class="sr-only peer" ${preferences.preferences ? 'checked' : ''}>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Buttons -->
+                        <div class="flex flex-col sm:flex-row justify-end gap-3 pt-4 border-t border-gray-200">
+                            <button id="save-cookie-settings" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-md text-sm font-medium transition-colors">
+                                Save Settings
+                            </button>
+                            <button id="accept-all-cookies" class="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-md text-sm font-medium transition-colors">
+                                Accept All
+                            </button>
+                            <button id="reject-all-cookies" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-md text-sm font-medium transition-colors">
+                                Reject All
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         `;
         
         document.body.appendChild(settingsPanel);
+        document.body.style.overflow = 'hidden';
         
         // Add event listeners
-        document.getElementById('close-cookie-settings').addEventListener('click', () => {
+        const closeSettings = () => {
             settingsPanel.remove();
+            document.body.style.overflow = '';
+        };
+        
+        // Close button
+        document.getElementById('close-cookie-settings').addEventListener('click', closeSettings);
+        
+        // Close when clicking outside the modal
+        settingsPanel.addEventListener('click', (e) => {
+            if (e.target === settingsPanel) {
+                closeSettings();
+            }
         });
         
+        // Save Settings button
         document.getElementById('save-cookie-settings').addEventListener('click', () => {
             const preferences = {
-                necessary: true, // Always true as these are essential
+                necessary: true, // Always enabled
                 analytics: document.getElementById('cookie-analytics').checked,
                 marketing: document.getElementById('cookie-marketing').checked,
                 preferences: document.getElementById('cookie-preferences').checked
@@ -187,12 +221,11 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const consentType = Object.values(preferences).every(v => v) ? 'all' : 'custom';
             handleCookieConsent(consentType, preferences);
-            settingsPanel.remove();
-            
-            // Show confirmation
+            closeSettings();
             showConfirmation('Your cookie preferences have been saved.');
         });
         
+        // Accept All button
         document.getElementById('accept-all-cookies').addEventListener('click', () => {
             handleCookieConsent('all', {
                 necessary: true,
@@ -200,10 +233,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 marketing: true,
                 preferences: true
             });
-            settingsPanel.remove();
+            closeSettings();
             showConfirmation('All cookies have been accepted.');
         });
         
+        // Reject All button
         document.getElementById('reject-all-cookies').addEventListener('click', () => {
             handleCookieConsent('necessary', {
                 necessary: true,
@@ -211,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 marketing: false,
                 preferences: false
             });
-            settingsPanel.remove();
+            closeSettings();
             showConfirmation('Non-essential cookies have been rejected.');
         });
     }
